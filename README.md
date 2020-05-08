@@ -206,5 +206,17 @@ mv build/out/qt*.zip inputs/
  
 Compile your coin (remember tag & name change):
  
-./bin/gbuild --commit funcoin=v0.8 ../funcoin/contrib/gitian-descriptors/gitian-win32.yml
+./bin/gbuild --commit funcoin=v0.8 ../testcoin/contrib/gitian-descriptors/gitian-win32.yml
 ```
+#Git file permissions on Windows
+```
+$ git diff --summary origin/epsilon master/epsilon
+ mode change 100644 => 100755 ants/dist/sample_bots/csharp/compile.sh
+ mode change 100644 => 100755 ants/dist/starter_bots/coffeescript/MyBot.coffee
+ mode change 100644 => 100755 ants/dist/starter_bots/coffeescript/ants.coffee
+ mode change 100644 => 100755 ants/util/block_test.sh
+ mode change 100644 => 100755 manager/mass_skill_update.py
+ mode change 100644 => 100755 worker/jailguard.py
+ mode change 100644 => 100755 worker/release_stale_jails.py
+ mode change 100644 => 100755 worker/start_worker.sh
+ ```
