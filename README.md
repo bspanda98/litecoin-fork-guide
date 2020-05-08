@@ -90,3 +90,45 @@ if (false && block.GetHash() != hashGenesisBlock)
             printf("block.GetHash = %s\n", block.GetHash().ToString().c_str());
         }
 ```
+```
+in src/qt/aboutdialog.cpp
+ 
+Fix line 22: ui->copyrightLabel->setText(tr("Copyright") + QString(" &copy; 2009-%1 ").arg(COPYRIGHT_YEAR) + tr("The Bitcoin developers") + QString("<br>") + tr("Copyright") + QString(" &copy; ") + tr("2011-%1 The Litecoin developers").arg(ABOUTDIALOG_COPYRIGHT_YEAR)+ QString("<br>") + tr("Copyright") +QString(" &copy; ") + tr("%1 Funcoin Developer").arg(2017));
+ 
+in src/qt/splashscreen.cpp
+ 
+line 22, add int line4 = 39;
+Fix line 30 and add 31: QString copyrightText3   = QChar(0xA9)+QString(" %1 ").arg(2017) + QString(tr("Funcoin Developer"));
+Change line 48: pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line4,versionText);
+Add line 54: pixPaint.drawText(paddingLeftCol2,paddingTopCol2+line3,copyrightText3);
+ 
+in src/qt/res/bitcoin-qt.rc:
+ 
+Fix line 11: #define COPYRIGHT_STR          "2009-" STRINGIZE(COPYRIGHT_YEAR) " The Bitcoin developers 2011-" STRINGIZE(COPYRIGHT_YEAR) " The Litecoin developers 2017 Funcoin Developer"
+ 
+in src/qt/aboutdialog.ui:
+ 
+Below line 94, paste:
+Copyright &amp;copy; 2011-YYYY The Litecoin developers
+Copyright &amp;copy; 2017 Funcoin Developer</string>
+ 
+1228, net.cpp
+ 
+perl script:
+ 
+#!/usr/bin/perl
+ 
+# Twobits twobit integer dotted quad to reverse hex convertor
+#  designed for q&d use to put seeds into pnSeeds in *coins
+ 
+my $ip;
+ 
+if (@ARGV) {
+    $ip = shift @ARGV;
+} else {
+    print "Enter an (dotted quad) ip address: ";
+    chomp( $ip = <STDIN> );
+}
+ 
+printf "0x%08x\n",  unpack 'N', pack 'C4', reverse split '\.', $ip;
+```
