@@ -46,6 +46,8 @@ openssl ecparam -genkey -name secp256k1 -out genesiscoinbase.pem
 openssl ec -in testnetalert.pem -text > genesiscoinbase.hex
 ```
 date +%s
+ 
+ #paste the code to generate genesis hash
  ```
 if (false && block.GetHash() != hashGenesisBlock)
         {
@@ -90,6 +92,7 @@ if (false && block.GetHash() != hashGenesisBlock)
             printf("block.GetHash = %s\n", block.GetHash().ToString().c_str());
         }
 ```
+#end
 ```
 in src/qt/aboutdialog.cpp
  
@@ -110,7 +113,7 @@ in src/qt/aboutdialog.ui:
  
 Below line 94, paste:
 Copyright &amp;copy; 2011-YYYY The Litecoin developers
-Copyright &amp;copy; 2017 Funcoin Developer</string>
+Copyright &amp;copy; 2017 Testcoin Developer</string>
  
 1228, net.cpp
  
