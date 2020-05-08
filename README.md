@@ -26,9 +26,10 @@ sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-d
 sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
  
 git clone -b 0.8 https://github.com/litecoin-project/litecoin.git
- 
+ ```
 find . -type f -print0 | xargs -0 sed -i 's/litecoin/testcoin/g'
 find . -type f -print0 | xargs -0 sed -i 's/Litecoin/Testcoin/g'
 find . -type f -print0 | xargs -0 sed -i 's/LiteCoin/Testcoin/g'
 find . -type f -print0 | xargs -0 sed -i 's/LITECOIN/TESTCOIN/g'
 find . -type f -print0 | xargs -0 sed -i 's/LTC/TST/g'
+```
