@@ -37,6 +37,7 @@ find . -type f -print0 | xargs -0 sed -i 's/LTC/TST/g'
 find . -type f -print0 | xargs -0 sed -i 's/9333/2333/g'
 find . -type f -print0 | xargs -0 sed -i 's/9332/2332/g'
  ```
+ #download these to set up valertpubkey
  ```
 openssl ecparam -genkey -name secp256k1 -out alertkey.pem
 openssl ec -in alertkey.pem -text > alertkey.hex
