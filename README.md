@@ -1,5 +1,5 @@
 # litecoin-fork-guide
-Dependencies:
+# Dependencies:
  
 sudo apt-get install git
  
@@ -37,7 +37,7 @@ find . -type f -print0 | xargs -0 sed -i 's/LTC/TST/g'
 find . -type f -print0 | xargs -0 sed -i 's/9333/2333/g'
 find . -type f -print0 | xargs -0 sed -i 's/9332/2332/g'
  ```
- #download these to set up valertpubkey
+ # download these to set up valertpubkey
  ```
 openssl ecparam -genkey -name secp256k1 -out alertkey.pem
 openssl ec -in alertkey.pem -text > alertkey.hex
@@ -48,7 +48,7 @@ openssl ec -in testnetalert.pem -text > genesiscoinbase.hex
 ```
 date +%s
  
- #paste the code to generate genesis hash
+ # paste the code to generate genesis hash
  ```
 if (false && block.GetHash() != hashGenesisBlock)
         {
@@ -93,7 +93,7 @@ if (false && block.GetHash() != hashGenesisBlock)
             printf("block.GetHash = %s\n", block.GetHash().ToString().c_str());
         }
 ```
-#end
+# end
 ```
 in src/qt/aboutdialog.cpp
  
@@ -136,7 +136,7 @@ if (@ARGV) {
  
 printf "0x%08x\n",  unpack 'N', pack 'C4', reverse split '\.', $ip;
 ```
-#LAST STEPS
+# LAST STEPS
 ```
 Permit root users over SSH:
  
@@ -209,7 +209,7 @@ Compile your coin (remember tag & name change):
  
 ./bin/gbuild --commit funcoin=v0.8 ../testcoin/contrib/gitian-descriptors/gitian-win32.yml
 ```
-#Git file permissions on Windows
+# Git file permissions on Windows
 ```
 $ git diff --summary origin/epsilon master/epsilon
  mode change 100644 => 100755 ants/dist/sample_bots/csharp/compile.sh
@@ -221,9 +221,9 @@ $ git diff --summary origin/epsilon master/epsilon
  mode change 100644 => 100755 worker/release_stale_jails.py
  mode change 100644 => 100755 worker/start_worker.sh
  ```
-#setting up block explorer
-#Iquidus github repo: https://github.com/iquidus/explorer
-#Instaling guide
+# setting up block explorer
+# Iquidus github repo: https://github.com/iquidus/explorer
+# Instaling guide
 ```
 --Block explorer pastes
  
